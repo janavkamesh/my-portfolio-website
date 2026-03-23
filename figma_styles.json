@@ -1,0 +1,452 @@
+{
+  "styles": {
+    "style_1BB4K8": {
+      "fontFamily": "Roboto",
+      "fontWeight": 800,
+      "fontSize": 20,
+      "lineHeight": "1.4em",
+      "letterSpacing": "-5%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_Q9IWAW": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 16,
+      "lineHeight": "1.5em",
+      "letterSpacing": "-2.500000037252903%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_LA2PJT": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 14,
+      "lineHeight": "1.4285714285714286em",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_EX0SBI": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 18,
+      "lineHeight": "1.1111111111111112em",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_M0PE0N": {
+      "fontFamily": "Roboto",
+      "fontWeight": 500,
+      "fontSize": 84,
+      "lineHeight": "0.9761904761904762em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_GGCZL8": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "lineHeight": "1.4em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_6TWI4Y": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 12,
+      "lineHeight": "1.6666666666666667em",
+      "letterSpacing": "-2.916666616996129%",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_9026VZ": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 24,
+      "lineHeight": "1.3333333333333333em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_JETTEA": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontWeight": 400,
+      "fontSize": 14,
+      "lineHeight": "1.4285714285714286em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_OI7ISG": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontWeight": 700,
+      "fontSize": 10,
+      "lineHeight": "1.5em",
+      "letterSpacing": "5%",
+      "textCase": "UPPER",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_RZLJ5K": {
+      "fontFamily": "Roboto",
+      "fontWeight": 800,
+      "fontSize": 48,
+      "lineHeight": "1em",
+      "letterSpacing": "-5.00000019868215%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_6KN7WH": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontWeight": 400,
+      "fontSize": 16,
+      "lineHeight": "1.5em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_VUL71E": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 20,
+      "lineHeight": "1.4em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_Q6TNI1": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 14,
+      "lineHeight": "1.625em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_9A7YXK": {
+      "fontFamily": "Roboto",
+      "fontWeight": 800,
+      "fontSize": 48,
+      "lineHeight": "1em",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_B9LVHF": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": "1.5555555555555556em",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_HHY83Q": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 16,
+      "lineHeight": "1.5em",
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "CENTER"
+    },
+    "style_UD0JN3": {
+      "fontFamily": "Plus Jakarta Sans",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": "1.625em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_5Y3RRR": {
+      "fontFamily": "Manrope",
+      "fontWeight": 700,
+      "fontSize": 18,
+      "lineHeight": "1.5555555555555556em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_8IZIFK": {
+      "fontFamily": "Manrope",
+      "fontWeight": 800,
+      "fontSize": 36,
+      "lineHeight": "1.1111111111111112em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_YKBWG8": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 14,
+      "lineHeight": "1.4285714285714286em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_N1N8J0": {
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 10,
+      "lineHeight": "1.5em",
+      "letterSpacing": "10%",
+      "textCase": "UPPER",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_38J5N2": {
+      "fontFamily": "Manrope",
+      "fontWeight": 900,
+      "fontSize": 20,
+      "lineHeight": "1.4em",
+      "letterSpacing": "-5%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_N9W3LF": {
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 16,
+      "lineHeight": "1.625em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_ZB2Q4B": {
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 12,
+      "lineHeight": "1.3333333333333333em",
+      "letterSpacing": "20.0000007947286%",
+      "textCase": "UPPER",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_YKFHZL": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": 16,
+      "lineHeight": "1.5em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_QYPRUH": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": "1.3333333333333333em",
+      "letterSpacing": "2.500000099341075%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    },
+    "style_2SEJR6": {
+      "fontFamily": "FreeSerif",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": "1.3333333333333333em",
+      "letterSpacing": "2.500000099341075%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "CENTER"
+    }
+  },
+  "colors": {
+    "fill_WF1UE2": "#F9F9F9",
+    "fill_NJV0FU": "rgba(255, 255, 255, 0.7)",
+    "stroke_N61GMY": "rgba(229, 229, 229, 0.15)",
+    "fill_XQLBIZ": "rgba(23, 23, 23, 0.84)",
+    "stroke_ZAP9E7": "#059669",
+    "fill_WKOMCH": "#047857",
+    "fill_G0SSMC": "#737373",
+    "fill_MTNSE0": "#1B1B1B",
+    "fill_XFNCAT": "#FAF7F6",
+    "fill_MU8HU0": "#2D3435",
+    "fill_ABGJ8F": "#596061",
+    "fill_UA2X41": {
+      "type": "IMAGE",
+      "imageRef": "04da679977e958b81cfd387777ff8cb2a63d30ce",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_WOUQKN": {
+      "type": "IMAGE",
+      "imageRef": "5c625f715bc48962468d9e2f0d2b39b0d13ba757",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_4L5CMU": {
+      "type": "IMAGE",
+      "imageRef": "8b83cd8252268cd84757d3e401050cc61545e92f",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_C1888L": {
+      "type": "IMAGE",
+      "imageRef": "995fef2b8e2f04dff8a4bbacba567311aa1452e9",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_1D68YN": {
+      "type": "IMAGE",
+      "imageRef": "56ba58d90d572f59df043e54d9caa4c2373d81dd",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_W79UXT": {
+      "type": "IMAGE",
+      "imageRef": "e105b7a7040669715512f73a7ac96ebf29eb5e34",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_61COXJ": {
+      "type": "IMAGE",
+      "imageRef": "9f4812184dabfc825f8191950a0b47768313f523",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_EMJ847": {
+      "type": "IMAGE",
+      "imageRef": "86a77a910bc7303d37ad680b9b4a3a0493c40b6b",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_X60L0Q": {
+      "type": "IMAGE",
+      "imageRef": "cf870e80e2c32c1663aa824b5a4c2ead7c94645c",
+      "scaleMode": "FILL",
+      "objectFit": "cover",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": false,
+        "requiresImageDimensions": false
+      }
+    },
+    "fill_98DDBH": "#9F403D",
+    "fill_P5JYRN": "rgba(255, 255, 255, 0)",
+    "fill_XJGE6F": "#FFF7F6",
+    "fill_KGV518": "#EAE7E7",
+    "fill_IBNFC5": {
+      "type": "IMAGE",
+      "imageRef": "743a67efbdcf6761e356749c3f1ce7b632621167",
+      "scaleMode": "STRETCH",
+      "objectFit": "fill",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": true,
+        "requiresImageDimensions": false,
+        "cropTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0.75,
+            0.125
+          ]
+        ],
+        "filenameSuffix": "2f67e1"
+      }
+    },
+    "fill_B53G06": "#1C1B1B",
+    "fill_7BPF4R": "#3C4A42",
+    "fill_QQNL2W": "#F6F3F2",
+    "fill_U77J8C": "#FFFFFF",
+    "stroke_2CUOEW": "rgba(172, 179, 180, 0.05)",
+    "fill_8AW1TO": "#006D47",
+    "fill_OGIQWY": "#0C0F0F",
+    "fill_YEPERA": "#A1A1AA",
+    "fill_MHTJHZ": "#18181B",
+    "fill_2ARK36": "rgba(0, 108, 73, 0.1)",
+    "fill_DM7BHW": {
+      "type": "IMAGE",
+      "imageRef": "2c486cec5aac94041b48e5958de254372cf159b3",
+      "scaleMode": "STRETCH",
+      "objectFit": "fill",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": true,
+        "requiresImageDimensions": false,
+        "cropTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "filenameSuffix": "56586a"
+      }
+    },
+    "fill_114P1Z": "#006C49",
+    "stroke_58KCUB": "rgba(172, 179, 180, 0.1)",
+    "stroke_WOYAOH": "#5F5E5E",
+    "fill_22LJGE": "rgba(249, 249, 249, 0.6)",
+    "fill_KK5E9E": "#54FEB3",
+    "fill_V069RN": "rgba(249, 249, 249, 0.8)",
+    "fill_8YYDBN": "#E6FFED",
+    "fill_OQB4C3": "#030712",
+    "fill_ZYTO6V": "#27272A",
+    "fill_OEMO1F": {
+      "type": "IMAGE",
+      "imageRef": "f37ce9ccd5ff6876793de1617d460a1ae7bd0950",
+      "scaleMode": "STRETCH",
+      "objectFit": "fill",
+      "isBackground": false,
+      "imageDownloadArguments": {
+        "needsCropping": true,
+        "requiresImageDimensions": false,
+        "cropTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "filenameSuffix": "56586a"
+      }
+    },
+    "fill_CAXPRQ": "#71717A",
+    "fill_O5UK1G": "#D4D4D8",
+    "fill_CLSF99": "rgba(39, 39, 42, 0.5)",
+    "fill_C8ZIC9": "#EF4444"
+  }
+}
