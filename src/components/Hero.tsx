@@ -1,14 +1,25 @@
 import React from 'react';
 
 export default function Hero() {
-  const images = [ 'tech1.png', 'tech2.png', 'tech3.png', 'tech4.png', 'tech5.png', 'tech6.png', 'tech7.png', 'tech8.png', 'tech9.png'];
+  const techStack = [
+    { file: 'tech1.png', name: 'React' },
+    { file: 'tech2.png', name: 'Next.js' },
+    { file: 'tech3.png', name: 'Node.js' },
+    { file: 'tech4.png', name: 'Express' },
+    { file: 'tech5.png', name: 'PostgreSQL' },
+    { file: 'tech6.png', name: 'MongoDB' },
+    { file: 'tech7.png', name: 'Python' },
+    { file: 'tech8.png', name: 'Tailwind CSS' },
+    { file: 'tech9.png', name: 'REST APIs' },
+  ];
 
   return (
     <section id="home" className="pt-48 pb-24 px-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-screen border-b border-transparent">
       <div className="max-w-4xl mx-auto z-10 relative mt-16">
-        <h1 className="font-roboto font-medium text-[84px] leading-[0.97em] text-heading tracking-tight mb-8">
+        <h1 className="sr-only">Janavkamesh — Full-Stack Developer</h1>
+        <p className="font-roboto font-medium text-[84px] leading-[0.97em] text-heading tracking-tight mb-8">
           I build websites that grow your Business
-        </h1>
+        </p>
         <p className="font-inter text-[20px] leading-[1.4em] text-muted max-w-2xl mx-auto mb-12">
           We bridge the gap between technical engineering and high-end
           editorial aesthetics to build websites that command attention.
@@ -22,12 +33,12 @@ export default function Hero() {
       <div className="mt-32 w-full max-w-[1124px] mx-auto overflow-hidden relative opacity-70 mask-image-gradient flex items-center px-4">
         {/* Infinite scrolling Marquee */}
         <div className="flex w-fit items-center animate-scroll-left hover:[animation-play-state:paused]">
-          {[...images, ...images].map((img, idx) => (
+          {[...techStack, ...techStack].map((tech, idx) => (
             <div key={idx} className="w-[124px] shrink-0 flex items-center justify-center">
-              <img 
-                src={`/images/${img}`} 
-                alt={`Tech stack`} 
-                className="h-10 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+              <img
+                src={`/images/${tech.file}`}
+                alt={`${tech.name} logo`}
+                className="h-10 sm:h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}

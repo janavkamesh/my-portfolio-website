@@ -13,9 +13,9 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
           <div className="w-full md:w-5/12 flex justify-center md:justify-start">
             <div className="w-full max-w-sm aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-200 bg-white">
-              <img 
-                src="/images/profile.png" 
-                alt="Janav" 
+              <img
+                src="/images/profile.png"
+                alt="Janavkamesh — Full-Stack Developer from Tamil Nadu, India"
                 className="w-full h-full object-cover"
               />
             </div>
