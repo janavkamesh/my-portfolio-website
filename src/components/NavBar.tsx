@@ -30,8 +30,12 @@ export default function NavBar() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  const mobileMenuContent = isOpen ? (
-    <div className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center md:hidden transition-all duration-300">
+  const mobileMenuContent = (
+    <div 
+      className={`fixed inset-0 z-[9999] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center lg:hidden transition-all duration-300 ${
+        isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+      }`}
+    >
       {/* Close Button */}
       <button 
         type="button"
@@ -63,7 +67,7 @@ export default function NavBar() {
         </Link>
       </div>
     </div>
-  ) : null;
+  );
 
   return (
     <>
@@ -86,7 +90,7 @@ export default function NavBar() {
           </Link>
           
           {/* Centered Links (Desktop) */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 font-body text-sm font-medium">
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 font-body text-sm font-medium">
             <Link className="text-on-surface-variant hover:text-on-background transition-colors duration-300" href="/">Home</Link>
             <Link className="text-on-surface-variant hover:text-on-background transition-colors duration-300" href="/projects">Projects</Link>
             <Link className="text-on-surface-variant hover:text-on-background transition-colors duration-300" href="/services">Services</Link>
@@ -95,14 +99,14 @@ export default function NavBar() {
           </div>
           
           {/* CTA */}
-          <Link href="/contact" className="hidden md:flex items-center justify-center bg-primary text-background font-body font-semibold text-sm py-2 px-6 rounded-full hover:bg-primary/90 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300 active:scale-95">
+          <Link href="/contact" className="hidden lg:flex items-center justify-center bg-primary text-background font-body font-semibold text-sm py-2 px-6 rounded-full hover:bg-primary/90 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300 active:scale-95">
             Book a Call
           </Link>
 
           {/* Mobile Menu Icon */}
           <button 
             type="button"
-            className="md:hidden relative z-[60] text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden relative z-[60] text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();

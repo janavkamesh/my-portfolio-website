@@ -1,8 +1,45 @@
 "use client";
 
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
+    
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSuccessMessage("Thanks! I'll get back to you shortly.");
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -57,23 +94,30 @@ export default function Contact() {
             Send a Message
           </h3>
           
-          <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+            {/* Honeypot Spam Protection */}
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="font-body text-sm font-semibold text-on-surface-variant">Name</label>
               <input 
                 type="text" 
                 id="name" 
+                name="name"
+                required
                 placeholder="John Doe" 
                 className="w-full bg-[#0b0d10] border border-outline-variant/30 rounded-xl px-5 py-4 text-on-background font-body text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all placeholder:text-on-surface-variant/40"
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="font-body text-sm font-semibold text-on-surface-variant">Email</label>
+              <label htmlFor="phone" className="font-body text-sm font-semibold text-on-surface-variant">Phone Number / WhatsApp</label>
               <input 
-                type="email" 
-                id="email" 
-                placeholder="john@example.com" 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                required
+                placeholder="+91 9952874748" 
                 className="w-full bg-[#0b0d10] border border-outline-variant/30 rounded-xl px-5 py-4 text-on-background font-body text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all placeholder:text-on-surface-variant/40"
               />
             </div>
@@ -82,18 +126,28 @@ export default function Contact() {
               <label htmlFor="message" className="font-body text-sm font-semibold text-on-surface-variant">Message</label>
               <textarea 
                 id="message" 
+                name="message"
                 rows={5}
                 placeholder="Tell me about your project..." 
                 className="w-full bg-[#0b0d10] border border-outline-variant/30 rounded-xl px-5 py-4 text-on-background font-body text-sm focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/60 transition-all placeholder:text-on-surface-variant/40 resize-none"
               ></textarea>
             </div>
 
-            <button 
-              type="submit" 
-              className="w-full mt-4 bg-on-background text-background font-headline font-bold text-base py-4 rounded-xl hover:bg-surface-highest transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-xl"
-            >
-              Send Message
-            </button>
+            <div className="mt-2 flex flex-col gap-2">
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-on-background text-background font-headline font-bold text-base py-4 rounded-xl hover:bg-surface-highest transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Let's Talk"}
+              </button>
+              
+              {successMessage && (
+                <p className="font-body text-sm text-[#25D366] text-center mt-2 font-medium">
+                  {successMessage}
+                </p>
+              )}
+            </div>
           </form>
         </div>
 
