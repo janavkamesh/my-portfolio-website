@@ -5,10 +5,21 @@ import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, SiFrame
 export default function Projects() {
   const projects = [
     {
+      title: "Power Fitness",
+      description: "A sleek and energetic platform for a modern fitness center, built to drive membership signups.",
+      url: "https://powerfitnessgym.vercel.app",
+      image: "/power-fitness.png",
+      techStack: [
+        { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
+        { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
+        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
+      ]
+    },
+    {
       title: "Vaastu Corp Construction",
       description: "A modern, high-performance website for a construction company, establishing a strong digital presence.",
       url: "https://vaastucorpconstruction.vercel.app",
-      image: "https://image.thum.io/get/width/800/crop/600/https://vaastucorpconstruction.vercel.app",
+      image: "/vaastu-construction.png",
       techStack: [
         { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
         { name: "TypeScript", icon: <SiTypescript className="w-3.5 h-3.5 text-blue-400" /> },
@@ -41,17 +52,6 @@ export default function Projects() {
         )},
         { name: "Tailwind", icon: <SiTailwindcss className="w-3.5 h-3.5 text-cyan-400" /> },
       ]
-    },
-    {
-      title: "Aura Wellness Gym",
-      description: "A sleek and energetic platform for a modern fitness center, built to drive membership signups.",
-      url: "https://aurawellnessgym.vercel.app",
-      image: "https://image.thum.io/get/width/800/crop/600/https://aurawellnessgym.vercel.app",
-      techStack: [
-        { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
-        { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
-        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
-      ]
     }
   ];
 
@@ -70,7 +70,7 @@ export default function Projects() {
             className="group flex flex-col bg-surface-low border border-outline-variant/40 rounded-2xl overflow-hidden hover:border-primary/50 transition-colors duration-300 shadow-lg"
           >
             {/* Project Image */}
-            <div className="relative w-full aspect-[4/3] bg-surface-high overflow-hidden border-b border-outline-variant/40">
+            <div className="relative w-full aspect-video bg-surface-high overflow-hidden border-b border-outline-variant/40">
               <div className="absolute inset-0 bg-background/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
               {/* Using a standard img tag here because the image source is external and unconfigured in next.config.ts */}
               <img 
@@ -122,7 +122,7 @@ export default function Projects() {
 
       <div className="flex justify-center mt-16">
         <Link 
-          href="#projects" 
+          href="/projects" 
           className="inline-flex items-center justify-center bg-transparent border border-outline-variant text-on-background hover:text-primary hover:border-primary/50 font-body font-medium text-base px-8 py-4 rounded-full transition-all duration-300 active:scale-95"
         >
           View All Projects

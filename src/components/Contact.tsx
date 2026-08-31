@@ -4,7 +4,7 @@ import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-6 pt-0 pb-10 md:pb-16">
+    <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         
         {/* Left Column: Contact Info */}

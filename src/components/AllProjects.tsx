@@ -10,11 +10,23 @@ export default function AllProjects() {
 
   const projects = [
     {
+      title: "Power Fitness",
+      description: "A sleek and energetic platform for a modern fitness center, built to drive membership signups.",
+      url: "https://powerfitnessgym.vercel.app",
+      image: "/power-fitness.png",
+      category: "Health & Fitness",
+      techStack: [
+        { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
+        { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
+        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
+      ]
+    },
+    {
       title: "Vaastu Corp Construction",
+      category: "Business",
       description: "A modern, high-performance website for a construction company, establishing a strong digital presence.",
       url: "https://vaastucorpconstruction.vercel.app",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-      category: "Landing pages",
+      image: "/vaastu-construction.png",
       techStack: [
         { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
         { name: "TypeScript", icon: <SiTypescript className="w-3.5 h-3.5 text-blue-400" /> },
@@ -48,18 +60,6 @@ export default function AllProjects() {
         )},
         { name: "Tailwind", icon: <SiTailwindcss className="w-3.5 h-3.5 text-cyan-400" /> },
       ]
-    },
-    {
-      title: "Aura Wellness Gym",
-      description: "A sleek and energetic platform for a modern fitness center, built to drive membership signups.",
-      url: "https://aurawellnessgym.vercel.app",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
-      category: "Landing pages",
-      techStack: [
-        { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
-        { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
-        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
-      ]
     }
   ];
 
@@ -67,7 +67,7 @@ export default function AllProjects() {
   const filteredProjects = filter === "All" ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section className="w-full max-w-7xl mx-auto pt-0 pb-10 md:pb-16">
+    <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
       <div className="flex flex-col items-center mb-10 text-center">
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background mb-8">
           Featured Projects
@@ -98,7 +98,7 @@ export default function AllProjects() {
             className="group flex flex-col bg-surface-low border border-outline-variant/40 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-primary/5"
           >
             {/* Project Image */}
-            <div className="relative w-full aspect-[4/3] bg-surface-high overflow-hidden border-b border-outline-variant/40">
+            <div className="relative w-full aspect-video bg-surface-high overflow-hidden border-b border-outline-variant/40">
               <div className="absolute inset-0 bg-background/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
               <img 
                 src={project.image} 

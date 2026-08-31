@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <section className="w-full pt-0 pb-10 md:pb-16">
+    <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left: Image Card */}
         <div className="relative w-full max-w-md mx-auto lg:mx-0 aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden border border-outline-variant/40 shadow-2xl group">

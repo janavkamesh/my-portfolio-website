@@ -1,26 +1,69 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent scrolling when mobile menu is open
+  // Prevent scrolling when mobile menu is open (using a safer approach)
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+    if (typeof window !== "undefined") {
+      if (isOpen) {
+        document.documentElement.style.overflow = "hidden";
+      } else {
+        document.documentElement.style.overflow = "";
+      }
     }
-    
     return () => {
-      document.body.style.overflow = "unset";
+      if (typeof window !== "undefined") {
+        document.documentElement.style.overflow = "";
+      }
     };
   }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);
+
+  // Use a portal for the mobile menu to ensure it breaks out of all parent containers
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const mobileMenuContent = isOpen ? (
+    <div className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center md:hidden transition-all duration-300">
+      {/* Close Button */}
+      <button 
+        type="button"
+        className="absolute top-6 right-6 text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none cursor-pointer"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        }}
+        aria-label="Close Navigation"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 pointer-events-none">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <div className="flex flex-col items-center gap-8 font-headline text-2xl font-bold">
+        <Link href="/" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Home</Link>
+        <Link href="/projects" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Projects</Link>
+        <Link href="/services" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Services</Link>
+        <Link href="/about" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">About</Link>
+        <Link href="/contact" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Contact</Link>
+        <Link 
+          href="/contact"
+          onClick={closeMenu}
+          className="mt-4 bg-primary text-background font-body font-bold text-lg py-3 px-10 rounded-full active:scale-95 transition-transform shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+        >
+          Book a Call
+        </Link>
+      </div>
+    </div>
+  ) : null;
 
   return (
     <>
@@ -37,7 +80,7 @@ export default function NavBar() {
                 className="object-cover"
               />
             </div>
-            <span className="font-headline font-bold text-on-background text-sm md:text-base tracking-wide">
+            <span className="font-headline font-bold text-on-background text-base md:text-lg tracking-wide">
               Janav Kamesh
             </span>
           </Link>
@@ -58,16 +101,21 @@ export default function NavBar() {
 
           {/* Mobile Menu Icon */}
           <button 
-            className="md:hidden text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            className="md:hidden relative z-[60] text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsOpen((prev) => !prev);
+            }}
             aria-label="Toggle Navigation"
           >
             {isOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 pointer-events-none">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 pointer-events-none">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             )}
@@ -75,25 +123,10 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg flex flex-col items-center justify-center md:hidden transition-all duration-300">
-          <div className="flex flex-col items-center gap-8 font-headline text-2xl font-bold">
-            <Link href="/" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Home</Link>
-            <Link href="/projects" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Projects</Link>
-            <Link href="/services" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Services</Link>
-            <Link href="/about" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">About</Link>
-            <Link href="/contact" onClick={closeMenu} className="text-on-surface-variant hover:text-primary transition-colors">Contact</Link>
-            <Link 
-              href="/contact"
-              onClick={closeMenu}
-              className="mt-4 bg-primary text-background font-body font-bold text-lg py-3 px-10 rounded-full active:scale-95 transition-transform shadow-[0_0_20px_rgba(6,182,212,0.3)]"
-            >
-              Book a Call
-            </Link>
-          </div>
-        </div>
-      )}
+      {/* Render Mobile Menu in a Portal so it completely escapes any parents */}
+      {mounted && typeof document !== "undefined"
+        ? createPortal(mobileMenuContent, document.body)
+        : null}
     </>
   );
 }

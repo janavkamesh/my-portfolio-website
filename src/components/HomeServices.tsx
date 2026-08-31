@@ -1,16 +1,61 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { MdWeb, MdSpeed, MdSearch, MdDevices, MdPalette, MdIntegrationInstructions, MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 export default function HomeServices() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const firstChild = scrollRef.current.children[0] as HTMLElement;
+        const scrollAmount = firstChild ? firstChild.offsetWidth + 24 : clientWidth; // width + gap
+        
+        // If at the end, smoothly scroll back to start
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }
+    }, 4000); // 4 seconds per slide
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const { clientWidth } = scrollRef.current;
-      const scrollAmount = direction === "left" ? -clientWidth / 1.1 : clientWidth / 1.1;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      const firstChild = scrollRef.current.children[0] as HTMLElement;
+      // 24 is the gap-6
+      const scrollAmount = firstChild ? firstChild.offsetWidth + 24 : scrollRef.current.clientWidth / 1.1;
+      
+      if (direction === "left") {
+        scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        // If clicking right at the end, loop to start for better UX
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }
     }
   };
 

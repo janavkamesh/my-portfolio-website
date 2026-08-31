@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaLightbulb, FaCompass, FaPenNib, FaCode, FaRocket } from "react-icons/fa";
 import { MdOutlineDesignServices, MdEngineering, MdOutlineSupportAgent } from "react-icons/md";
 
@@ -70,15 +70,23 @@ export default function HowIWork() {
     }
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [steps.length]);
+
   return (
-    <section className="w-full py-10 md:py-16">
+    <section className="w-full max-w-7xl mx-auto px-6 py-10 md:py-16">
       <div className="flex flex-col items-center mb-20 text-center">
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background mb-6">
           How I <span className="text-primary">Work</span>
         </h2>
       </div>
 
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="w-full">
         {/* Timeline Stepper */}
         <div className="relative flex items-center justify-between mb-24 px-2 md:px-12">
           {/* Horizontal Line */}
@@ -103,9 +111,9 @@ export default function HowIWork() {
         </div>
 
         {/* Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch">
           {/* Left Column */}
-          <div className="flex flex-col gap-6 transition-all duration-500 min-h-[400px]">
+          <div className="flex flex-col gap-6 transition-all duration-500 h-full justify-center">
             <div className="flex flex-col gap-5">
               <div className="w-14 h-14 rounded-2xl bg-[#0c1f26] border border-outline-variant/20 flex items-center justify-center text-primary shadow-sm mb-2">
                 {steps[activeStep].leftIcon}
@@ -137,7 +145,7 @@ export default function HowIWork() {
           </div>
 
           {/* Right Column (Card) */}
-          <div className="w-full h-[400px] md:h-[450px] bg-[#111419] rounded-2xl border border-outline-variant/10 relative overflow-hidden flex flex-col items-center justify-center group shadow-2xl">
+          <div className="w-full h-full min-h-[400px] md:min-h-[450px] bg-[#111419] rounded-2xl border border-outline-variant/10 relative overflow-hidden flex flex-col items-center justify-center group shadow-2xl">
             <div className="flex flex-col items-center justify-center z-10 gap-8 transition-transform duration-500 group-hover:-translate-y-2">
               <div className="text-primary bg-primary/10 p-6 rounded-full ring-1 ring-primary/30 relative">
                 {/* Inner Glow */}
@@ -148,11 +156,6 @@ export default function HowIWork() {
                 {steps[activeStep].cardSubtitle}
               </h4>
             </div>
-            
-            {/* Big faded number at bottom right */}
-            <span className="absolute -bottom-8 right-4 text-[10rem] font-headline font-black text-[#142630] select-none z-0 tracking-tighter transition-all duration-500">
-              {steps[activeStep].num}
-            </span>
           </div>
         </div>
       </div>

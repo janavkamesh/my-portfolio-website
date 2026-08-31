@@ -33,10 +33,14 @@ export default function TechMarquee() {
           {[...techStack, ...techStack, ...techStack].map((tech, index) => (
             <div 
               key={index} 
-              className="flex items-center justify-center min-w-max hover:scale-110 transition-transform duration-300 cursor-default drop-shadow-md" 
-              title={tech.name}
+              className="group relative flex flex-col items-center justify-center min-w-max hover:scale-110 transition-transform duration-300 cursor-default drop-shadow-md" 
             >
               {tech.icon}
+              
+              {/* Custom Lightweight Tooltip */}
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-body font-medium bg-surface-highest border border-outline-variant/30 text-on-surface-variant px-3 py-1 rounded-full pointer-events-none whitespace-nowrap shadow-sm">
+                {tech.name}
+              </span>
             </div>
           ))}
         </div>

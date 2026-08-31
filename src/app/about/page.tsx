@@ -9,7 +9,7 @@ export default function AboutPage() {
     <main className="min-h-screen flex flex-col items-center bg-background pt-24 md:pt-32 w-full overflow-clip">
       <NavBar />
       
-      <div className="flex-grow w-full max-w-7xl mx-auto px-6">
+      <div className="flex-grow w-full flex flex-col items-center">
         <AboutMe />
         <HowIWork />
       </div>

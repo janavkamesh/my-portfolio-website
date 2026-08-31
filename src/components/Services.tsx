@@ -71,7 +71,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-6 pt-0 pb-10 md:pb-16">
+    <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
       <div className="flex flex-col items-center gap-4 text-center mb-16">
         <span className="font-body text-sm font-semibold tracking-widest text-primary uppercase">Expertise</span>
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background">
