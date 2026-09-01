@@ -14,9 +14,10 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center relative overflow-hidden border border-outline-variant/60">
                 <Image 
-                  src="/profile-new.png" 
+                  src="/avatar.jpeg" 
                   alt="Janav Kamesh" 
                   fill
+                  sizes="48px"
                   className="object-cover"
                 />
               </div>
@@ -78,9 +79,9 @@ export default function Footer() {
             <h4 className="font-headline text-base font-bold text-on-background">Contact</h4>
             <ul className="flex flex-col gap-4">
               <li>
-                <a href="mailto:janavkamesh09@gmail.com" className="group flex items-center gap-3 font-body text-sm text-on-surface-variant hover:text-primary transition-colors duration-300">
+                <a href="mailto:contact@janavkamesh.com" className="group flex items-center gap-3 font-body text-sm text-on-surface-variant hover:text-primary transition-colors duration-300">
                   <MdOutlineMail className="text-primary w-5 h-5 flex-shrink-0" />
-                  janavkamesh09@gmail.com
+                  contact@janavkamesh.com
                 </a>
               </li>
               <li>

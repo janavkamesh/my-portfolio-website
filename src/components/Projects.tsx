@@ -56,8 +56,8 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="w-full max-w-7xl mx-auto px-6 py-10 md:py-16">
-      <div className="flex flex-col items-center mb-12 text-center">
+    <section id="projects" className="w-full max-w-7xl mx-auto px-6 pt-2 md:pt-4 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-24">
+      <div className="flex flex-col items-center mb-10 md:mb-12 text-center">
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background">
           Featured Projects
         </h2>

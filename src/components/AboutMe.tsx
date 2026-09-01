@@ -8,9 +8,11 @@ export default function AboutMe() {
         <div className="relative w-full max-w-md mx-auto lg:mx-0 aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden border border-outline-variant/40 shadow-2xl group">
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10 opacity-80"></div>
           <Image 
-            src="/profile-new.png" 
+            src="/profile.jpeg" 
             alt="Janav Kamesh" 
             fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
           />
         </div>

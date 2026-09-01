@@ -93,7 +93,7 @@ export default function HomeServices() {
   ];
 
   return (
-    <section id="services" className="w-full max-w-7xl mx-auto px-6 py-10 md:py-16">
+    <section id="services" className="w-full max-w-7xl mx-auto px-6 py-10 md:py-16 scroll-mt-28 md:scroll-mt-32">
       <div className="flex flex-col items-center justify-center gap-6 mb-12 md:mb-16">
         <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background text-center w-full">
           What I Offer

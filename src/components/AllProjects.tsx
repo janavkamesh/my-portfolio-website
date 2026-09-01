@@ -73,15 +73,15 @@ export default function AllProjects() {
           Featured Projects
         </h2>
 
-        {/* WhatsApp style independent toggles */}
+        {/* Category Filter Toggles */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-6 py-1.5 rounded-full font-body text-sm font-semibold transition-all duration-300 active:scale-95 shadow-sm ${
+              className={`px-6 py-2 rounded-full font-body text-sm font-semibold transition-all duration-300 active:scale-95 cursor-pointer ${
                 filter === f 
-                  ? "bg-[#1A3B32] text-[#81D8B4] border border-[#1A3B32]" 
+                  ? "bg-surface-low text-primary border border-primary shadow-[0_0_15px_rgba(6,182,212,0.25)]" 
                   : "bg-surface-low text-on-surface-variant border border-outline-variant/40 hover:border-outline-variant hover:text-on-background"
               }`}
             >
