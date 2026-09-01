@@ -58,54 +58,47 @@ export default function NavBar() {
 
   const mobileMenuContent = (
     <div 
-      className={`fixed inset-0 z-[9999] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center lg:hidden transition-all duration-300 ${
+      className={`fixed inset-0 z-[9998] flex flex-col items-center justify-start pt-20 sm:pt-24 px-4 lg:hidden transition-all duration-300 ${
         isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
       }`}
     >
-      {/* Close Button */}
-      <button 
-        type="button"
-        className="absolute top-6 right-6 text-on-surface-variant p-2 hover:text-primary transition-colors focus:outline-none cursor-pointer"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          closeMenu();
-        }}
-        aria-label="Close Navigation"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 pointer-events-none">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-      </button>
+      {/* Dimmed backdrop - click to close */}
+      <div 
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        onClick={closeMenu}
+      />
       
-      <div className="flex flex-col items-center gap-8 font-headline text-2xl font-bold">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-          return (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={closeMenu}
-              className={`flex flex-col items-center transition-colors duration-300 ${
-                isActive
-                  ? "text-on-background font-extrabold"
-                  : "text-on-surface-variant hover:text-on-background"
-              }`}
-            >
-              <span>{link.name}</span>
-              {isActive && (
-                <div className="h-[2px] bg-white w-full rounded-full mt-1" />
-              )}
-            </Link>
-          );
-        })}
-        <Link 
-          href="/contact"
-          onClick={closeMenu}
-          className="mt-4 bg-primary text-background font-body font-bold text-lg py-3 px-10 rounded-full active:scale-95 transition-transform shadow-[0_0_20px_rgba(6,182,212,0.3)]"
-        >
-          Book a Call
-        </Link>
+      {/* Floating Card Modal */}
+      <div className={`relative z-10 w-full max-w-sm bg-[#0D0D12]/95 border border-outline-variant/60 rounded-3xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-all duration-300 ${
+        isOpen ? "scale-100 translate-y-0 opacity-100" : "scale-95 -translate-y-4 opacity-0"
+      }`}>
+        <div className="flex flex-col items-center gap-4 w-full">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className={`w-full text-center py-2 text-base font-headline font-semibold transition-colors duration-200 ${
+                  isActive
+                    ? "text-white font-bold"
+                    : "text-on-surface-variant hover:text-white"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          
+          <Link 
+            href="/contact"
+            onClick={closeMenu}
+            className="mt-3 w-full py-3.5 px-6 rounded-2xl bg-[#1E1E24] hover:bg-surface-high border border-outline-variant/60 text-white font-headline font-bold text-center flex items-center justify-center transition-all duration-300 active:scale-[0.98] shadow-md"
+          >
+            Book a Call
+          </Link>
+        </div>
       </div>
     </div>
   );

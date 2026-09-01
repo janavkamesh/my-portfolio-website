@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full pt-[15vh] pb-[30vh] md:pt-[11vh] md:pb-0 md:min-h-[calc(100vh-128px)] flex flex-col items-center md:justify-start text-center px-6 md:px-8 mt-4 md:mt-0">
+    <section className="relative w-full pt-[12vh] pb-14 sm:pb-16 md:pt-[11vh] md:pb-0 md:min-h-[calc(100vh-128px)] flex flex-col items-center md:justify-start text-center px-6 md:px-8 mt-2 md:mt-0">
       
       {/* Background Glow Effect for premium feel */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none -z-10"></div>
@@ -43,15 +43,10 @@ export default function Hero() {
       </div>
 
       {/* Curved background at the bottom with scroll icon inside */}
-      {/* 
-        - Height reduced by ~30% (from 220px to 150px) to prevent it from covering too much screen
-        - This creates breathing room between the CTA buttons and the top of the arch
-        - Arrow button remains anchored at the bottom
-      */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[20%] w-[120vw] md:w-[100vw] h-[150px] md:h-[120px] bg-gradient-to-b from-[#06B6D4]/[14%] via-surface-low to-background rounded-t-[50%] flex justify-center items-end pb-12 md:pb-8 shadow-[0_-15px_50px_rgba(6,182,212,0.15)] border-t-[3px] border-primary">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[10%] md:translate-y-[20%] w-[120vw] md:w-[100vw] h-[95px] md:h-[120px] bg-gradient-to-b from-[#06B6D4]/[14%] via-surface-low to-background rounded-t-[50%] flex justify-center items-end pb-4 md:pb-8 shadow-[0_-15px_50px_rgba(6,182,212,0.15)] border-t-[3px] border-primary">
         <Link 
           href="#projects" 
-          className="w-12 h-12 md:w-10 md:h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 bg-background/50 backdrop-blur-md transition-colors animate-bounce mb-2 md:mb-0 translate-y-[30%] md:translate-y-[15%]"
+          className="w-11 h-11 md:w-10 md:h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 bg-background/50 backdrop-blur-md transition-colors animate-bounce mb-1 md:mb-0 translate-y-[10%] md:translate-y-[15%]"
           aria-label="Scroll to next section"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-4 md:h-4">
