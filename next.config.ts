@@ -6,18 +6,27 @@ if (process.env.NODE_ENV === "development" && !process.env.QR_SHOWN) {
   // Set flag so we only show it once (Next.js can reload config)
   process.env.QR_SHOWN = "1";
   
-  // Find local IP
+  // Find local IP prioritizing active Wi-Fi / Ethernet
   const getLocalIp = () => {
     const interfaces = os.networkInterfaces();
+    const candidateIps: string[] = [];
+    const priorityNames = ["wi-fi", "wifi", "wlan", "ethernet", "eth", "en"];
+
     for (const name of Object.keys(interfaces)) {
-      for (const iface of interfaces[name]!) {
-        // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
+      const lowerName = name.toLowerCase();
+      if (lowerName.includes("vethernet") || lowerName.includes("virtual") || lowerName.includes("wsl") || lowerName.includes("host-only")) {
+        continue;
+      }
+      for (const iface of interfaces[name] || []) {
         if (iface.family === "IPv4" && !iface.internal) {
-          return iface.address;
+          if (priorityNames.some((p) => lowerName.includes(p))) {
+            return iface.address;
+          }
+          candidateIps.push(iface.address);
         }
       }
     }
-    return "localhost";
+    return candidateIps[0] || "localhost";
   };
 
   const ip = getLocalIp();
@@ -41,7 +50,13 @@ if (process.env.NODE_ENV === "development" && !process.env.QR_SHOWN) {
 }
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: [
+    "192.168.0.106",
+    "192.168.0.*",
+    "192.168.*.*",
+    "localhost:3000",
+    "localhost",
+  ],
 };
 
 export default nextConfig;

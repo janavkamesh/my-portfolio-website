@@ -12,7 +12,7 @@ export default function Projects() {
       techStack: [
         { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
         { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
-        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
+        { name: "TypeScript", icon: <SiTypescript className="w-3.5 h-3.5 text-blue-400" /> },
       ]
     },
     {

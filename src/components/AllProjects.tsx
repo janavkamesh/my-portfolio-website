@@ -14,16 +14,16 @@ export default function AllProjects() {
       description: "A sleek and energetic platform for a modern fitness center, built to drive membership signups.",
       url: "https://powerfitnessgym.vercel.app",
       image: "/power-fitness.png",
-      category: "Health & Fitness",
+      category: "Landing pages",
       techStack: [
         { name: "Next.js", icon: <SiNextdotjs className="w-3.5 h-3.5" /> },
         { name: "React", icon: <SiReact className="w-3.5 h-3.5 text-cyan-400" /> },
-        { name: "Framer", icon: <SiFramer className="w-3.5 h-3.5" /> },
+        { name: "TypeScript", icon: <SiTypescript className="w-3.5 h-3.5 text-blue-400" /> },
       ]
     },
     {
       title: "Vaastu Corp Construction",
-      category: "Business",
+      category: "Landing pages",
       description: "A modern, high-performance website for a construction company, establishing a strong digital presence.",
       url: "https://vaastucorpconstruction.vercel.app",
       image: "/vaastu-construction.png",

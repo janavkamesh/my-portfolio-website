@@ -3,6 +3,12 @@ import Image from "next/image";
 export default function AboutMe() {
   return (
     <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-10 md:pb-16">
+      <div className="flex flex-col items-center justify-center text-center mb-10 md:mb-16">
+        <h2 className="font-headline text-3xl md:text-5xl font-bold text-on-background">
+          About Me
+        </h2>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left: Image Card */}
         <div className="relative w-full max-w-md mx-auto lg:mx-0 aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden border border-outline-variant/40 shadow-2xl group">
@@ -19,9 +25,9 @@ export default function AboutMe() {
 
         {/* Right: Content */}
         <div className="flex flex-col gap-5 text-center lg:text-left">
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-on-background mb-2">
+          <h3 className="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-on-background mb-2">
             Hi, I'm <span className="text-primary">Janav.</span>
-          </h2>
+          </h3>
 
           <div className="flex flex-col gap-5 font-body text-base md:text-lg text-on-surface-variant leading-relaxed">
             <p>
