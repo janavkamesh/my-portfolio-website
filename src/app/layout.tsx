@@ -13,8 +13,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://janavkamesh.com"),
   title: "Janav Kamesh | Premium Portfolio",
   description: "Engineering high-performance websites that drive revenue.",
+  openGraph: {
+    title: "Janav Kamesh | Premium Portfolio",
+    description: "Engineering high-performance websites that drive revenue.",
+    url: "https://janavkamesh.com",
+    siteName: "Janav Kamesh Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
