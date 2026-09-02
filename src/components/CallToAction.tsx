@@ -17,7 +17,7 @@ export default function CallToAction() {
         </p>
         
         <Link 
-          href="#contact"
+          href="/contact"
           className="relative z-10 bg-primary text-background font-body font-semibold text-base px-10 py-4 rounded-full hover:bg-primary/90 hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all duration-300 active:scale-95 flex items-center gap-3 mt-4"
         >
           Book a Call

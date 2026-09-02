@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Call to Actions */}
         <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 w-[90%] sm:w-auto relative z-10 mx-auto mt-2 md:mt-3 lg:mt-4">
           <Link 
-            href="#contact" 
+            href="/contact" 
             className="flex-1 sm:flex-none inline-flex items-center justify-center bg-primary text-background font-body font-semibold text-sm sm:text-base px-4 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-primary/90 hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 active:scale-95 whitespace-nowrap"
           >
             Book a call
